@@ -56,6 +56,11 @@
    - tabel Description disimpan sebagai Hostel_Desc.csv
    - tabel Rating disimpan sebagai Hostel_Rating.csv
 
+### Store Hostel_Rating.csv dalam Database
+![Store Localhost](https://github.com/DJahvoe/ETL-menggunakan-KNIME/blob/master/screenshot/Store%20Hostel_Rating%20to%20localhost_2.jpg)
+1. Connect dengan _MySQL Connector_
+2. Load Hostel_Rating.csv dengan _CSV Reader_
+3. Store data hostel_rating dengan _DB Writer_
 ## _Modelling_
 ![Baca Data Dua Sumber](https://github.com/DJahvoe/ETL-menggunakan-KNIME/blob/master/screenshot/Membaca%20data%20dari%20dua%20sumber.jpg)
 ### Membaca data dari dua sumber
