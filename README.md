@@ -1,6 +1,6 @@
 # **Japanese Hostel Dataset**
 
-## **Business Understanding**
+## _Business Understanding_
 
 ### Kemungkinan proses yang dapat dilakukan
 
@@ -8,7 +8,7 @@
 - Mencari rating hostel tertinggi
 - Mencari harga hostel yang murah
 
-## **Data Understanding**
+## _Data Understanding_
 
 - jumlah data sebanyak **342 baris**
 
@@ -28,7 +28,7 @@
 - lon: derajat **garis bujur**
 - lat: derajat **garis lintang**
 
-## **Data Preparation**
+## _Data Preparation_
 
 ### Proses splitting data:
 
@@ -57,16 +57,43 @@
    - tabel Description disimpan sebagai Hostel_Desc.csv
    - tabel Rating disimpan sebagai Hostel_Rating.csv
 
-## **Modelling**
+## _Modelling_
 
 ### Membaca data dari dua sumber
 
+- Membaca data hostel_rating dari Database
+  1. Membuat koneksi menggunakan _MySQL Connector_ (menginput Hostname, Database name, Username & password)
+  2. Dengan menggunakan _DB Table Selector_, Menginput Schema _hostel_ dan Tabel _hostel_rating_
+  3. Memasukan hasil ke dalam _DB Reader_
+  4. Execute
+  5. Data dapat terbaca dengan membuka data table
+- Membaca data Hostel_Desc
+  1. Menggunakan _CSV Reader_ memasukkan path di mana file Hostel_Desc.csv disimpan
+  2. Execute
+  3. Data dapat terbaca dengan membuka data table
+
 ### Proses Append
 
-## **Evaluation**
+1. Memasukkan hasil _Read hostel_rating table_ dan _Load Hostel_Desc.csv_ ke input _Column Appender_
+2. Melakukan setting _Column Appender_ (Tidak diperlukan apabila kedua tabel memiliki ID yang sama)
+3. Execute
 
-## **Deployment**
+## _Evaluation_
+
+Proses Append berhasil dilakukan
+
+## _Deployment_
 
 ### Penyimpanan hasil append ke dalam file dan database
 
-![Split Data](screenshot/Splitting Data.jpg)
+- Penyimpanan tabel dalam file CSV
+  1. Menerima data dari _Column Appender_
+  2. Memasukan path yang diinginkan ke dalam _CSV Writer_
+  3. Execute
+  4. Tabel hasil append berhasil disimpan pada file CSV
+- Penyimpanan tabel dalam Database
+  1. Menerima data dari _Column Appender_
+  2. Membuat koneksi menggunakan _MySQL Connector_
+  3. Memasukan data Schema dan Table yang ingin di-insert pada _DB Writer_
+  4. Execute
+  5. Tabel hasil append berhasil disimpan pada Database
