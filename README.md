@@ -29,9 +29,8 @@
 - lat: derajat **garis lintang**
 
 ## _Data Preparation_
-
+![Split Data](https://github.com/DJahvoe/ETL-menggunakan-KNIME/blob/master/screenshot/Splitting%20Data.jpg)
 ### Proses splitting data:
-
 1. Load file Hostel.csv
 2. Split column dengan memisah antara,
 
@@ -52,13 +51,13 @@
      - security
      - staff
      - valueformoney
-
+![Splitter setting](https://github.com/DJahvoe/ETL-menggunakan-KNIME/blob/master/screenshot/Column%20Splitter.jpg)
 3. Simpan dalam file sesuai nama masing - masing
    - tabel Description disimpan sebagai Hostel_Desc.csv
    - tabel Rating disimpan sebagai Hostel_Rating.csv
 
 ## _Modelling_
-
+![Baca Data Dua Sumber](https://github.com/DJahvoe/ETL-menggunakan-KNIME/blob/master/screenshot/Membaca%20data%20dari%20dua%20sumber.jpg)
 ### Membaca data dari dua sumber
 
 - Membaca data hostel_rating dari Database
@@ -67,23 +66,25 @@
   3. Memasukan hasil ke dalam _DB Reader_
   4. Execute
   5. Data dapat terbaca dengan membuka data table
+  ![Data Hostel Rating](https://github.com/DJahvoe/ETL-menggunakan-KNIME/blob/master/screenshot/hostel_rating%20table.jpg)
 - Membaca data Hostel_Desc
   1. Menggunakan _CSV Reader_ memasukkan path di mana file Hostel_Desc.csv disimpan
   2. Execute
   3. Data dapat terbaca dengan membuka data table
+  ![Data Hostel_Desc](https://github.com/DJahvoe/ETL-menggunakan-KNIME/blob/master/screenshot/hostel_desc%20table.jpg)
 
 ### Proses Append
-
+![Proses Append](https://github.com/DJahvoe/ETL-menggunakan-KNIME/blob/master/screenshot/Append%20Dataset_2.jpg)
 1. Memasukkan hasil _Read hostel_rating table_ dan _Load Hostel_Desc.csv_ ke input _Column Appender_
 2. Melakukan setting _Column Appender_ (Tidak diperlukan apabila kedua tabel memiliki ID yang sama)
 3. Execute
 
 ## _Evaluation_
-
+![Append Table](https://github.com/DJahvoe/ETL-menggunakan-KNIME/blob/master/screenshot/appended%20table.jpg)
 Proses Append berhasil dilakukan
 
 ## _Deployment_
-
+![Hasil Append](https://github.com/DJahvoe/ETL-menggunakan-KNIME/blob/master/screenshot/Save%20data%20to%20localfile%20and%20database_2.jpg)
 ### Penyimpanan hasil append ke dalam file dan database
 
 - Penyimpanan tabel dalam file CSV
